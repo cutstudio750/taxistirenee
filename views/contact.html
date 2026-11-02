@@ -1,0 +1,117 @@
+<!--meta
+title: Contact · Taxi Saint-Irénée, Lyon · 06 61 88 27 07
+description: Joindre Taxi Saint-Irénée : téléphone, WhatsApp ou formulaire. Questions fréquentes sur la réservation, le paiement, le transport conventionné.
+nav: contact
+faq: yes
+alt: /en/contact
+scripts: contact.js
+-->
+<section class="hero hero--page">
+  <div class="ambient" aria-hidden="true"><span class="ambient__halo ambient__halo--1"></span><span class="ambient__halo ambient__halo--4"></span></div>
+  <div class="container hero__grid">
+    <div>
+      <span class="eyebrow" data-reveal>Contact</span>
+      <h1 class="h1" data-reveal data-d="1">Le plus simple reste d'appeler.</h1>
+      <p class="lead" data-reveal data-d="2">C'est le chauffeur qui répond. S'il conduit, il vous rappelle dès qu'il est à l'arrêt.</p>
+    </div>
+    <div class="contact-cards" data-stagger="scale">
+      <a class="contact-card glass glass--dark" href="tel:{{PHONE_TEL}}">
+        <svg class="icon icon--lg" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg>
+        <span><small>Téléphone</small>{{PHONE}}</span>
+      </a>
+      <a class="contact-card glass glass--dark" href="{{WHATSAPP}}" rel="noopener" target="_blank">
+        <svg class="icon icon--lg" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>
+        <span><small>WhatsApp</small>Envoyer un message</span>
+      </a>
+      <a class="contact-card glass glass--dark" href="mailto:{{EMAIL}}">
+        <svg class="icon icon--lg" aria-hidden="true"><use href="/assets/img/icons.svg#mail"/></svg>
+        <span><small>E-mail</small><span class="contact-card__mail">{{EMAIL}}</span></span>
+      </a>
+      <a class="contact-card glass glass--dark" href="/reserver">
+        <svg class="icon icon--lg" aria-hidden="true"><use href="/assets/img/icons.svg#calendar"/></svg>
+        <span><small>En ligne</small>Demande de réservation</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--creme">
+  <div class="container split split--wide-left">
+    <div>
+      <span class="eyebrow" data-reveal>Écrire</span>
+      <h2 class="h2" data-reveal data-d="1">Une question, un devis entreprise, un besoin particulier&nbsp;?</h2>
+      <p class="lead mt-3" data-reveal data-d="2">Laissez un message : la réponse arrive par téléphone ou par e-mail. Pour réserver une course, utilisez plutôt le <a class="text-link" href="/reserver">formulaire de réservation</a>.</p>
+    </div>
+    <form class="card form-card" data-contact-form novalidate data-reveal="scale">
+      <div class="form-grid">
+        <div class="field span-2">
+          <label for="c-name">Nom</label>
+          <input type="text" class="input" id="c-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="c-phone">Téléphone</label>
+          <input class="input" id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+        </div>
+        <div class="field">
+          <label for="c-email">E-mail</label>
+          <input class="input" id="c-email" name="email" type="email" autocomplete="email">
+        </div>
+        <div class="field span-2">
+          <label for="c-subject">Sujet</label>
+          <select class="select" id="c-subject" name="subject">
+            <option>Question générale</option>
+            <option value="entreprise"><!--srv-->Compte entreprise<!--/srv--><!--static-->Entreprise<!--/static--></option>
+            <option>Transport conventionné</option>
+            <option>Longue distance ou mise à disposition</option>
+            <option>Facture</option>
+          </select>
+        </div>
+        <div class="field span-2">
+          <label for="c-message">Message</label>
+          <textarea class="textarea" id="c-message" name="message" required></textarea>
+        </div>
+        <input type="text" class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="check span-2"><input type="checkbox" name="consent" required><span>J'accepte que mes coordonnées soient utilisées pour répondre à ce message. <a class="text-link" href="/mentions-legales#donnees">En savoir plus</a></span></label>
+      </div>
+      <div class="form-foot">
+        <button class="btn btn--noir" type="submit">Envoyer le message</button>
+      </div>
+      <div class="alert" data-form-alert hidden></div>
+    </form>
+  </div>
+</section>
+
+<section class="section section--creme-2" id="questions">
+  <div class="container split">
+    <div>
+      <span class="eyebrow" data-reveal>Questions fréquentes</span>
+      <h2 class="h2" data-reveal data-d="1">Tout ce qu'on nous demande souvent.</h2>
+    </div>
+    <div class="faq" data-reveal>
+      <details>
+        <summary>Comment se passe une réservation en ligne&nbsp;?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p>Vous envoyez une demande avec le trajet, la date et vos coordonnées. Le chauffeur vous rappelle pour confirmer : la course n'est réservée qu'après cet appel.<!--srv--> Si vous avez un compte, le statut passe à « confirmée » dans votre espace.<!--/srv--></p></div>
+      </details>
+      <details>
+        <summary>Pourquoi pas d'estimation de prix sur le site&nbsp;?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p>Le prix d'un taxi dépend du tarif préfectoral en vigueur, de l'heure, du jour et du trafic réel. Plutôt qu'un chiffre approximatif, le chauffeur vous donne les éléments exacts au téléphone.</p></div>
+      </details>
+      <details>
+        <summary>Comment payer&nbsp;?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p>À bord, par carte bancaire ou en espèces. Pour un transport conventionné, la dispense d'avance de frais s'applique lorsque les conditions sont réunies.</p></div>
+      </details>
+      <details>
+        <summary>Où trouver mes factures&nbsp;?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p><!--srv-->Avec un compte, toutes vos factures sont dans votre espace client, à consulter ou à enregistrer en PDF. Sans compte, la facture vous est envoyée par e-mail si vous avez indiqué votre adresse.<!--/srv--><!--static-->Une facture vous est remise à la fin de chaque course. Sur demande, elle peut aussi vous être envoyée par e-mail.<!--/static--></p></div>
+      </details>
+      <details>
+        <summary>Comment annuler ou modifier une course&nbsp;?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p><!--srv-->Depuis votre espace client, ou par téléphone.<!--/srv--><!--static-->Par téléphone, par WhatsApp ou par e-mail.<!--/static--> Pour un changement le jour même, appelez directement le {{PHONE}}.</p></div>
+      </details>
+      <details>
+        <summary>Combien de passagers et de bagages&nbsp;?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p>Le véhicule compte 7 places, chauffeur compris : jusqu'à 6 passagers. Indiquez le nombre de passagers et de valises en réservant : pour un groupe ou un départ en vacances chargé, le chauffeur vérifie avec vous que tout le monde et tous les bagages tiendront confortablement.</p></div>
+      </details>
+    </div>
+  </div>
+</section>

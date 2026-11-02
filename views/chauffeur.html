@@ -1,0 +1,51 @@
+<!--meta
+title: Espace chauffeur · Taxi Saint-Irénée
+robots: noindex, nofollow
+scripts: chauffeur.js
+footer: none
+dock: none
+bodyClass: page-driver
+-->
+<h1 class="sr-only">Espace chauffeur Taxi Saint-Irénée</h1>
+<section class="driver-login on-noir" data-driver-view="login" hidden>
+  <div class="ambient" aria-hidden="true"><span class="ambient__halo ambient__halo--1"></span></div>
+  <form class="auth__card glass glass--dark driver-login__card" data-driver-login novalidate>
+    <img src="/assets/img/monogramme-creme.svg" alt="" width="64" height="56">
+    <h2 class="h3">Espace chauffeur</h2>
+    <div class="field"><label for="drv-pass">Mot de passe</label><input class="input" id="drv-pass" name="password" type="password" autocomplete="current-password" required></div>
+    <div class="alert" data-form-alert hidden></div>
+    <button class="btn btn--creme btn--block" type="submit">Entrer</button>
+  </form>
+</section>
+
+<section class="driver section--creme" data-driver-view="board" hidden>
+  <div class="container">
+    <div class="driver__head">
+      <div>
+        <span class="eyebrow">Espace chauffeur</span>
+        <h2 class="h2" data-driver-title>Demandes</h2>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn--outline btn--sm" type="button" data-refresh><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#repeat"/></svg>Actualiser</button>
+        <button class="btn btn--noir btn--sm" type="button" data-new-booking><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg>Course prise par téléphone</button>
+      </div>
+    </div>
+    <div class="segmented segmented--sm driver__filter" role="radiogroup" aria-label="Filtre" data-driver-filter>
+      <label><input type="radio" name="df" value="pending" checked><span>À rappeler <b data-count="pending"></b></span></label>
+      <label><input type="radio" name="df" value="confirmed"><span>Confirmées <b data-count="confirmed"></b></span></label>
+      <label><input type="radio" name="df" value="done"><span>Terminées</span></label>
+      <label><input type="radio" name="df" value="messages"><span>Messages <b data-count="messages"></b></span></label>
+      <label><input type="radio" name="df" value="qr"><span>QR code</span></label>
+    </div>
+    <div class="driver__list" data-driver-list></div>
+  </div>
+</section>
+
+<dialog class="sheet" data-sheet>
+  <form method="dialog" class="sheet__inner" data-sheet-form novalidate>
+    <div class="sheet__head"><h2 class="h3" data-sheet-title>Course</h2><button type="submit" class="icon-btn icon-btn--light" value="cancel" aria-label="Fermer"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#close"/></svg></button></div>
+    <div class="sheet__body" data-sheet-body></div>
+    <div class="alert" data-form-alert hidden></div>
+    <div class="sheet__foot"><button type="submit" class="btn btn--quiet" value="cancel">Annuler</button><button class="btn btn--noir" type="submit" value="ok" data-sheet-submit>Valider</button></div>
+  </form>
+</dialog>

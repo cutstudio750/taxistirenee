@@ -1,0 +1,34 @@
+# Mise en ligne sur Render en quelques clics (« New » → « Blueprint » → choisir ce dépôt).
+# Le disque permanent garde les comptes, réservations et factures entre deux mises à jour.
+services:
+  - type: web
+    name: taxi-saint-irenee
+    runtime: node
+    plan: starter
+    region: frankfurt
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /
+    disk:
+      name: donnees
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /var/data
+      - key: SECURE_COOKIES
+        value: "1"
+      - key: SITE_URL
+        sync: false
+      - key: DRIVER_PASSWORD
+        sync: false
+      - key: CONTACT_EMAIL
+        value: taxisaintirenee@gmail.com
+      - key: NTFY_URL
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false

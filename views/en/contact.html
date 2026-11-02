@@ -1,0 +1,117 @@
+<!--meta
+title: Contact · Taxi Saint-Irénée, Lyon · +33 6 61 88 27 07
+description: Reach Taxi Saint-Irénée by phone, WhatsApp, email or the contact form. Frequently asked questions about booking, payment and medical transport.
+nav: contact
+faq: yes
+alt: /contact
+scripts: contact.js
+-->
+<section class="hero hero--page">
+  <div class="ambient" aria-hidden="true"><span class="ambient__halo ambient__halo--1"></span><span class="ambient__halo ambient__halo--4"></span></div>
+  <div class="container hero__grid">
+    <div>
+      <span class="eyebrow" data-reveal>Contact</span>
+      <h1 class="h1" data-reveal data-d="1">The simplest way is still to call.</h1>
+      <p class="lead" data-reveal data-d="2">The driver answers in person. If he is driving, he calls you back as soon as he has stopped.</p>
+    </div>
+    <div class="contact-cards" data-stagger="scale">
+      <a class="contact-card glass glass--dark" href="tel:{{PHONE_TEL}}">
+        <svg class="icon icon--lg" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg>
+        <span><small>Phone</small>{{PHONE_INTL}}</span>
+      </a>
+      <a class="contact-card glass glass--dark" href="{{WHATSAPP}}" rel="noopener" target="_blank">
+        <svg class="icon icon--lg" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>
+        <span><small>WhatsApp</small>Send a message</span>
+      </a>
+      <a class="contact-card glass glass--dark" href="mailto:{{EMAIL}}">
+        <svg class="icon icon--lg" aria-hidden="true"><use href="/assets/img/icons.svg#mail"/></svg>
+        <span><small>Email</small><span class="contact-card__mail">{{EMAIL}}</span></span>
+      </a>
+      <a class="contact-card glass glass--dark" href="/en/book">
+        <svg class="icon icon--lg" aria-hidden="true"><use href="/assets/img/icons.svg#calendar"/></svg>
+        <span><small>Online</small>Booking request</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--creme">
+  <div class="container split split--wide-left">
+    <div>
+      <span class="eyebrow" data-reveal>Write</span>
+      <h2 class="h2" data-reveal data-d="1">A question, a business quote, a special request?</h2>
+      <p class="lead mt-3" data-reveal data-d="2">Leave a message: the reply comes by phone or email. To book a ride, please use the <a class="text-link" href="/en/book">booking form</a> instead.</p>
+    </div>
+    <form class="card form-card" data-contact-form novalidate data-reveal="scale">
+      <div class="form-grid">
+        <div class="field span-2">
+          <label for="c-name">Name</label>
+          <input type="text" class="input" id="c-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="c-phone">Phone</label>
+          <input class="input" id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+        </div>
+        <div class="field">
+          <label for="c-email">Email</label>
+          <input class="input" id="c-email" name="email" type="email" autocomplete="email">
+        </div>
+        <div class="field span-2">
+          <label for="c-subject">Subject</label>
+          <select class="select" id="c-subject" name="subject">
+            <option>General question</option>
+            <option value="entreprise"><!--srv-->Business account<!--/srv--><!--static-->Business<!--/static--></option>
+            <option>Medical transport</option>
+            <option>Long distance or chauffeur by the hour</option>
+            <option>Invoice</option>
+          </select>
+        </div>
+        <div class="field span-2">
+          <label for="c-message">Message</label>
+          <textarea class="textarea" id="c-message" name="message" required></textarea>
+        </div>
+        <input type="text" class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="check span-2"><input type="checkbox" name="consent" required><span>I agree that my details are used to reply to this message. <a class="text-link" href="/en/legal#data">Learn more</a></span></label>
+      </div>
+      <div class="form-foot">
+        <button class="btn btn--noir" type="submit">Send the message</button>
+      </div>
+      <div class="alert" data-form-alert hidden></div>
+    </form>
+  </div>
+</section>
+
+<section class="section section--creme-2" id="questions">
+  <div class="container split">
+    <div>
+      <span class="eyebrow" data-reveal>Questions</span>
+      <h2 class="h2" data-reveal data-d="1">What people often ask us.</h2>
+    </div>
+    <div class="faq" data-reveal>
+      <details>
+        <summary>How does an online booking work?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p>You send a request with the route, the date and your details. The driver calls you back to confirm: the ride is only booked after this call.<!--srv--> If you have an account, its status changes to "confirmed" in your client area.<!--/srv--></p></div>
+      </details>
+      <details>
+        <summary>Why is there no price estimate on the site?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p>A taxi fare depends on the regulated rate in force, the time, the day and actual traffic. Rather than an approximate figure, the driver gives you the exact details on the phone.</p></div>
+      </details>
+      <details>
+        <summary>How do I pay?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p>On board, by card or in cash. For covered medical transport, no upfront payment is needed when the conditions are met.</p></div>
+      </details>
+      <details>
+        <summary>Where can I find my invoices?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p><!--srv-->With an account, all your invoices are in your client area, to view or save as PDF. Without an account, the invoice is emailed to you if you gave your address.<!--/srv--><!--static-->You are given an invoice at the end of every ride. On request, it can also be emailed to you.<!--/static--></p></div>
+      </details>
+      <details>
+        <summary>How do I cancel or change a ride?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p><!--srv-->From your client area, or by phone.<!--/srv--><!--static-->By phone, WhatsApp or email.<!--/static--> For a same-day change, call {{PHONE_INTL}} directly.</p></div>
+      </details>
+      <details>
+        <summary>How many passengers and how much luggage?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p>The vehicle has 7 seats, driver included: up to 6 passengers. State the number of passengers and suitcases when booking: for a group or a heavily packed holiday departure, the driver checks with you that everyone and everything will fit comfortably.</p></div>
+      </details>
+    </div>
+  </div>
+</section>

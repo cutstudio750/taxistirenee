@@ -1,0 +1,37 @@
+<header class="site-header {{HEADER_CLASS}}" data-header>
+  <div class="site-header__bar glass glass--dark">
+    <a class="site-header__logo" href="{{T:home.url}}" aria-label="{{T:header.homeAria}}">
+      <picture>
+        <source media="(max-width: 1040px)" srcset="/assets/img/monogramme-creme.svg" width="44" height="39">
+        <img class="logo-mark" src="/assets/img/logo-court-creme.svg" alt="" width="150" height="45">
+      </picture>
+    </a>
+    <a class="site-header__full" href="{{T:home.url}}" aria-hidden="true" tabindex="-1"><img src="/assets/img/logo-creme.svg" alt="" width="140" height="55" loading="lazy"></a>
+    <nav class="site-nav" aria-label="{{T:header.mainNav}}">
+      <ul>{{NAV}}</ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="header-phone" href="tel:{{PHONE_TEL}}"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg><span>{{PHONE}}</span></a>
+      <a class="lang-switch" href="{{ALT_URL}}" hreflang="{{T:lang.otherCode}}" lang="{{T:lang.otherCode}}" aria-label="{{T:lang.otherAria}}" data-lang-switch>{{T:lang.other}}</a>
+      <!--srv--><a class="icon-btn" href="/compte" data-account-link aria-label="{{T:header.account}}"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#user"/></svg></a><!--/srv-->
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-mobile" data-menu-toggle>
+        <span class="menu-toggle__lines" aria-hidden="true"><span></span><span></span></span>
+        <span class="sr-only">{{T:header.menu}}</span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="menu-mobile" data-menu hidden>
+    <nav aria-label="{{T:header.mobileNav}}">
+      <ul class="mobile-menu__links">
+        <li><a href="{{T:home.url}}">{{T:header.home}}</a></li>
+        {{NAV}}
+        <!--srv--><li><a href="/compte">{{T:header.account}}</a></li><!--/srv-->
+      </ul>
+    </nav>
+    <div class="mobile-menu__foot">
+      <a class="btn btn--creme btn--block" href="{{T:book.url}}">{{T:header.bookRide}}</a>
+      <a class="btn btn--glass btn--block" href="tel:{{PHONE_TEL}}">{{T:header.call}} {{PHONE}}</a>
+      <p class="mobile-menu__note"><a class="mobile-menu__lang" href="{{ALT_URL}}" lang="{{T:lang.otherCode}}" data-lang-switch>{{T:lang.otherAria}}</a> · {{T:header.note}}</p>
+    </div>
+  </div>
+</header>

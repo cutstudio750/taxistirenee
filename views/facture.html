@@ -1,0 +1,16 @@
+<!--meta
+title: Facture · Taxi Saint-Irénée
+robots: noindex
+scripts: facture.js
+header: none
+footer: none
+dock: none
+bodyClass: page-invoice
+-->
+<div class="invoice-toolbar">
+  <a class="btn btn--quiet" href="/compte#factures"><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-left"/></svg>Mes factures</a>
+  <button class="btn btn--noir btn--sm" type="button" data-print><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#print"/></svg>Imprimer ou enregistrer en PDF</button>
+</div>
+<article class="invoice" data-invoice aria-live="polite">
+  <p class="muted center" data-invoice-status>Chargement de la facture…</p>
+</article>

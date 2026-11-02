@@ -1,0 +1,209 @@
+<!--meta
+title: Espace client · Taxi Saint-Irénée
+description: Votre espace client Taxi Saint-Irénée : trajets, factures, carte de fidélité et assistant personnel.
+robots: noindex
+scripts: compte.js
+bodyClass: page-account
+-->
+<h1 class="sr-only">Espace client Taxi Saint-Irénée</h1>
+<!-- Connexion / inscription -->
+<section class="auth on-noir" data-view="auth" hidden>
+  <div class="ambient" aria-hidden="true"><span class="ambient__halo ambient__halo--1"></span><span class="ambient__halo ambient__halo--2"></span><span class="ambient__halo ambient__halo--4"></span></div>
+  <div class="container auth__grid">
+    <div class="auth__intro">
+      <span class="eyebrow">Espace client</span>
+      <h2 class="h1">Vos trajets, vos factures, votre fidélité.</h2>
+      <ul class="list-check mt-4">
+        <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#home"/></svg><span>Adresses et coordonnées enregistrées</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#file"/></svg><span>Toutes vos factures en PDF</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#card"/></svg><span>{{LOYALTY_STEP}} courses, puis {{LOYALTY_REWARD}}</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#repeat"/></svg><span>Un assistant qui repère vos trajets réguliers</span></li>
+      </ul>
+    </div>
+
+    <div class="auth__card glass glass--dark on-noir">
+      <div class="tabs" role="group" aria-label="Connexion ou inscription">
+        <button type="button" id="tab-login" aria-pressed="true" data-auth-tab="login">Se connecter</button>
+        <button type="button" id="tab-register" aria-pressed="false" data-auth-tab="register">Créer un compte</button>
+        <span class="tabs__pill" aria-hidden="true"></span>
+      </div>
+
+      <form id="panel-login" aria-label="Connexion" class="auth__form" data-form="login" novalidate>
+        <div class="field"><label for="l-email">E-mail</label><input class="input" id="l-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="l-pass">Mot de passe</label><input class="input" id="l-pass" name="password" type="password" autocomplete="current-password" required></div>
+        <div class="alert" data-form-alert hidden></div>
+        <button class="btn btn--creme btn--block" type="submit">Se connecter</button>
+        <button class="btn btn--quiet auth__link" type="button" data-forgot>Mot de passe oublié&nbsp;?</button>
+      </form>
+
+      <form id="panel-register" aria-label="Création de compte" class="auth__form" data-form="register" novalidate hidden>
+        <div class="row-2">
+          <div class="field"><label for="r-first">Prénom</label><input type="text" class="input" id="r-first" name="firstName" autocomplete="given-name" required></div>
+          <div class="field"><label for="r-last">Nom</label><input type="text" class="input" id="r-last" name="lastName" autocomplete="family-name" required></div>
+        </div>
+        <div class="field"><label for="r-email">E-mail</label><input class="input" id="r-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="r-phone">Téléphone</label><input class="input" id="r-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+        <div class="field"><label for="r-pass">Mot de passe</label><input class="input" id="r-pass" name="password" type="password" autocomplete="new-password" minlength="8" required><p class="field-hint">8 caractères minimum.</p></div>
+        <label class="check"><input type="checkbox" name="consent" required><span>J'accepte la <a class="text-link" href="/mentions-legales#donnees" target="_blank">politique de données</a>, y compris l'analyse de mes trajets par l'assistant.</span></label>
+        <div class="alert" data-form-alert hidden></div>
+        <button class="btn btn--creme btn--block" type="submit">Créer mon compte</button>
+      </form>
+
+      <form class="auth__form" data-form="forgot" novalidate hidden>
+        <p class="lead">Indiquez votre e-mail : vous recevrez un lien pour choisir un nouveau mot de passe.</p>
+        <div class="field"><label for="f-email">E-mail</label><input class="input" id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="alert" data-form-alert hidden></div>
+        <button class="btn btn--creme btn--block" type="submit">Recevoir le lien</button>
+        <button class="btn btn--quiet auth__link" type="button" data-back-login>Retour à la connexion</button>
+      </form>
+
+      <form class="auth__form" data-form="reset" novalidate hidden>
+        <p class="lead">Choisissez votre nouveau mot de passe.</p>
+        <div class="field"><label for="n-pass">Nouveau mot de passe</label><input class="input" id="n-pass" name="password" type="password" autocomplete="new-password" minlength="8" required></div>
+        <div class="alert" data-form-alert hidden></div>
+        <button class="btn btn--creme btn--block" type="submit">Enregistrer</button>
+      </form>
+      <p class="auth__guest">Pas envie de créer un compte&nbsp;? <a class="text-link" href="/reserver">Réserver sans compte</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Tableau de bord -->
+<div class="dash" data-view="dash" hidden>
+  <section class="dash-head on-noir">
+    <div class="ambient" aria-hidden="true"><span class="ambient__halo ambient__halo--1"></span><span class="ambient__halo ambient__halo--4"></span></div>
+    <div class="container rel dash-head__inner">
+      <div>
+        <span class="eyebrow">Espace client</span>
+        <h2 class="h1" data-greeting>Bonjour</h2>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--creme" href="/reserver"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg>Nouvelle course</a>
+        <a class="btn btn--glass" href="tel:{{PHONE_TEL}}" aria-label="Appeler le chauffeur"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg><span class="hide-sm">Appeler le chauffeur</span></a>
+      </div>
+    </div>
+    <div class="container rel">
+      <nav class="dash-tabs glass glass--dark on-noir" aria-label="Sections de l'espace client" data-dash-tabs>
+        <a href="#apercu" data-tab="apercu"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#home"/></svg><span>Aperçu</span></a>
+        <a href="#trajets" data-tab="trajets"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#route"/></svg><span>Trajets</span></a>
+        <a href="#factures" data-tab="factures"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#file"/></svg><span>Factures</span></a>
+        <a href="#assistant" data-tab="assistant"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#chat"/></svg><span>Assistant</span></a>
+        <a href="#profil" data-tab="profil"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#user"/></svg><span>Profil</span></a>
+        <span class="dash-tabs__pill" aria-hidden="true"></span>
+      </nav>
+    </div>
+  </section>
+
+  <div class="dash-body section--creme">
+    <div class="container">
+      <!-- Aperçu -->
+      <section class="dash-panel" data-panel="apercu" aria-label="Aperçu">
+        <div class="overview">
+          <div class="overview__next" data-next-ride></div>
+          <div class="overview__loyalty" data-loyalty></div>
+        </div>
+        <div class="stats" data-stats></div>
+        <div class="insights" data-insights></div>
+      </section>
+
+      <!-- Trajets -->
+      <section class="dash-panel" data-panel="trajets" aria-label="Trajets" hidden>
+        <div class="panel-head">
+          <h2 class="h3">Vos trajets</h2>
+          <div class="segmented segmented--sm" role="radiogroup" aria-label="Filtrer" data-trip-filter>
+            <label><input type="radio" name="tripfilter" value="upcoming" checked><span>À venir</span></label>
+            <label><input type="radio" name="tripfilter" value="past"><span>Passés</span></label>
+            <label><input type="radio" name="tripfilter" value="all"><span>Tous</span></label>
+          </div>
+        </div>
+        <ul class="trip-list" data-trips></ul>
+      </section>
+
+      <!-- Factures -->
+      <section class="dash-panel" data-panel="factures" aria-label="Factures" hidden>
+        <div class="panel-head">
+          <h2 class="h3">Vos factures</h2>
+          <select class="select select--sm" data-invoice-year aria-label="Année"></select>
+        </div>
+        <div data-invoices></div>
+      </section>
+
+      <!-- Assistant -->
+      <section class="dash-panel" data-panel="assistant" aria-label="Assistant" hidden>
+        <div class="assistant">
+          <div class="assistant__chat glass glass--light">
+            <div class="assistant__head">
+              <img src="/assets/img/monogramme-noir.svg" alt="" width="36" height="32">
+              <div>
+                <p class="assistant__title">Votre assistant</p>
+                <p class="muted assistant__sub">Il connaît vos trajets, vos factures et votre fidélité.</p>
+              </div>
+            </div>
+            <div class="assistant__log" data-chat-log aria-live="polite"></div>
+            <div class="assistant__chips" data-chat-chips></div>
+            <form class="assistant__form" data-chat-form>
+              <label class="sr-only" for="chat-input">Votre question</label>
+              <input type="text" class="input" id="chat-input" name="message" placeholder="Ex. Réserve mon trajet habituel de mardi" autocomplete="off" maxlength="800">
+              <button class="send-btn" type="submit" aria-label="Envoyer"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#send"/></svg></button>
+            </form>
+          </div>
+          <div class="assistant__side" data-habits></div>
+        </div>
+      </section>
+
+      <!-- Profil -->
+      <section class="dash-panel" data-panel="profil" aria-label="Profil" hidden>
+        <div class="profile-grid">
+          <form class="card stack" data-form="profile" novalidate>
+            <h2 class="h3">Coordonnées</h2>
+            <div class="row-2">
+              <div class="field"><label for="p-first">Prénom</label><input type="text" class="input" id="p-first" name="firstName" autocomplete="given-name"></div>
+              <div class="field"><label for="p-last">Nom</label><input type="text" class="input" id="p-last" name="lastName" autocomplete="family-name"></div>
+            </div>
+            <div class="field"><label for="p-email">E-mail</label><input class="input" id="p-email" name="email" type="email" autocomplete="email"></div>
+            <div class="field"><label for="p-phone">Téléphone</label><input class="input" id="p-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="alert" data-form-alert hidden></div>
+            <div><button class="btn btn--noir" type="submit">Enregistrer</button></div>
+          </form>
+
+          <div class="card stack">
+            <div class="panel-head panel-head--flat">
+              <h2 class="h3">Adresses enregistrées</h2>
+              <button class="btn btn--outline btn--sm" type="button" data-add-address><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg>Ajouter</button>
+            </div>
+            <ul class="address-list" data-addresses></ul>
+            <form class="address-form" data-form="address" hidden novalidate>
+              <div class="field"><label for="a-label">Nom</label><input type="text" class="input" id="a-label" name="label" placeholder="Domicile, Travail, Cabinet…" maxlength="40"></div>
+              <div class="field"><label for="a-address">Adresse</label><div class="input-icon"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#pin"/></svg><input type="text" class="input" id="a-address" name="address" data-address></div></div>
+              <div class="btn-row"><button class="btn btn--noir btn--sm" type="submit">Enregistrer l'adresse</button><button class="btn btn--quiet" type="button" data-cancel-address>Annuler</button></div>
+            </form>
+          </div>
+
+          <form class="card stack" data-form="password" novalidate>
+            <h2 class="h3">Mot de passe</h2>
+            <div class="field"><label for="pw-cur">Mot de passe actuel</label><input class="input" id="pw-cur" name="current" type="password" autocomplete="current-password"></div>
+            <div class="field"><label for="pw-new">Nouveau mot de passe</label><input class="input" id="pw-new" name="next" type="password" autocomplete="new-password" minlength="8"></div>
+            <div class="alert" data-form-alert hidden></div>
+            <div><button class="btn btn--outline" type="submit">Modifier</button></div>
+          </form>
+
+          <div class="card stack">
+            <h2 class="h3">Session et données</h2>
+            <p class="muted">Vos factures restent conservées dix ans, comme la loi l'exige, même après suppression du compte.</p>
+            <div class="btn-row">
+              <button class="btn btn--outline" type="button" data-logout><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#logout"/></svg>Se déconnecter</button>
+              <button class="btn btn--quiet danger" type="button" data-delete-account>Supprimer mon compte</button>
+            </div>
+            <form class="stack" data-form="delete" hidden novalidate>
+              <div class="field"><label for="d-pass">Confirmez avec votre mot de passe</label><input class="input" id="d-pass" name="password" type="password" autocomplete="current-password"></div>
+              <div class="alert" data-form-alert hidden></div>
+              <div><button class="btn btn--noir" type="submit">Supprimer définitivement</button></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="page-loader" data-view="loading"><span></span></div>

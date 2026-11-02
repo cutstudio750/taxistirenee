@@ -1,0 +1,337 @@
+<!--meta
+title: Taxi Saint-Irénée · Taxi conventionné haut de gamme à Lyon depuis 2014
+description: Taxi conventionné CPAM à Lyon et dans la métropole depuis 2014. Aéroport Saint-Exupéry, gares, rendez-vous médicaux, jusqu'à 6 passagers. Réservation en ligne, confirmation par téléphone : 06 61 88 27 07.
+jsonld: business
+faq: yes
+alt: /en
+scripts: home.js
+-->
+<section class="hero hero--home">
+  <div class="ambient" aria-hidden="true">
+    <span class="ambient__halo ambient__halo--1"></span>
+    <span class="ambient__halo ambient__halo--2"></span>
+    <span class="ambient__halo ambient__halo--3"></span>
+    <span class="ambient__halo ambient__halo--4"></span>
+  </div>
+  <img width="120" height="105" class="monogram-watermark" src="/assets/img/monogramme-creme.svg" alt="" aria-hidden="true">
+  <div class="container hero-b rel">
+    <div class="hero-b__text">
+      <p class="hero__meta" data-reveal><span>Taxi conventionné</span><span class="hide-sm">Lyon &amp; métropole</span><span>Depuis 2014</span></p>
+      <h1 class="hero-b__title" data-reveal data-d="1">Chaque trajet, <em>préparé à l'avance.</em></h1>
+      <p class="lead" data-reveal data-d="2">Aéroport, gares, rendez-vous médicaux, courses en ville. Vous indiquez le trajet, le chauffeur vous rappelle, et le jour venu il est déjà là.</p>
+      <div class="btn-row" data-reveal data-d="3">
+        <a class="btn btn--creme btn--lg" href="/reserver">Réserver une course <svg class="icon icon--move" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg></a>
+      </div>
+      <p class="hero__note" data-reveal data-d="4">Sans compte, sans paiement en ligne.</p>
+    </div>
+
+    <div class="quick-book glass on-noir" data-reveal="scale" data-d="2">
+        <div class="quick-book__title">
+          <h2>Où allez-vous&nbsp;?</h2>
+          <span>Confirmation par téléphone</span>
+        </div>
+          <form action="/reserver" method="get" data-quick-book>
+            <div class="route-fields">
+              <div class="input-icon">
+                <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#dot"/></svg>
+                <label class="sr-only" for="qb-from">Adresse de départ</label>
+                <input type="text" class="input" id="qb-from" name="from" placeholder="Adresse de départ" autocomplete="off" required data-address>
+              </div>
+              <div class="input-icon">
+                <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#pin"/></svg>
+                <label class="sr-only" for="qb-to">Adresse d'arrivée</label>
+                <input type="text" class="input" id="qb-to" name="to" placeholder="Destination, gare, aéroport…" autocomplete="off" required data-address>
+              </div>
+              <button class="swap-btn" type="button" data-swap aria-label="Inverser départ et arrivée"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#swap"/></svg></button>
+            </div>
+            <div class="row-2">
+              <div class="field">
+                <label class="sr-only" for="qb-date">Date</label>
+                <input class="input" type="date" id="qb-date" name="date" required>
+              </div>
+              <div class="field">
+                <label class="sr-only" for="qb-time">Heure</label>
+                <input class="input" type="time" id="qb-time" name="time" step="300" required>
+              </div>
+            </div>
+            <div class="quick-book__foot">
+              <button class="btn btn--creme btn--block" type="submit">Continuer <svg class="icon icon--move" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg></button>
+              <p class="quick-book__note">Le chauffeur vous rappelle pour valider l'horaire et les détails.</p>
+            </div>
+          </form>
+      </div>
+  </div>
+
+  <div class="container rel">
+    <dl class="key-facts" data-stagger>
+      <div><dt>2014</dt><dd>Le même artisan au volant depuis douze ans</dd></div>
+      <div><dt>CPAM</dt><dd>Taxi conventionné par l'Assurance Maladie</dd></div>
+      <div><dt>6 passagers</dt><dd>Un véhicule haut de gamme, bagages compris</dd></div>
+      <div><dt>1 chauffeur</dt><dd>Qui répond, conduit et établit la facture</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section section--creme svc-section">
+  <div class="container">
+    <div class="svc-head">
+      <div>
+        <span class="eyebrow" data-reveal>Prestations</span>
+        <h2 class="h2" data-reveal data-d="1">Tous vos trajets,<br>de la porte au quai.</h2>
+      </div>
+      <a class="btn btn--outline" href="/prestations" data-reveal data-d="2">Toutes les prestations</a>
+    </div>
+    <div class="svc-list" data-stagger>
+      <a href="/aeroport-gares"><span class="svc-list__n">01</span><h3>Aéroport &amp; gares</h3><p>Horaire réel du vol suivi, accueil avec une pancarte à votre nom.</p><span class="svc-list__go"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg></span></a>
+      <a href="/conventionne"><span class="svc-list__n">02</span><h3>Transport conventionné</h3><p>Consultations, hospitalisations, dialyse, chimiothérapie, radiothérapie.</p><span class="svc-list__go"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg></span></a>
+      <a href="/prestations#ville"><span class="svc-list__n">03</span><h3>Courses en ville</h3><p>Rendez-vous, soirées, restaurants, partout dans la métropole.</p><span class="svc-list__go"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg></span></a>
+      <a href="/prestations#longue-distance"><span class="svc-list__n">04</span><h3>Longues distances</h3><p>Genève, Annecy, Grenoble, Paris : de porte à porte, sans correspondance.</p><span class="svc-list__go"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg></span></a>
+      <a href="/prestations#familles"><span class="svc-list__n">05</span><h3>Familles &amp; groupes</h3><p>Jusqu'à six passagers dans un seul véhicule, valises comprises.</p><span class="svc-list__go"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg></span></a>
+      <a href="/prestations#entreprises"><span class="svc-list__n">06</span><h3>Entreprises</h3><p>Transferts de clients et de collaborateurs, factures nominatives.</p><span class="svc-list__go"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--creme-2">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <div>
+        <span class="eyebrow" data-reveal>L'esprit Saint-Irénée</span>
+        <h2 class="h2" data-reveal data-d="1">Un artisan, pas une plateforme.</h2>
+      </div>
+      <p class="lead" data-reveal data-d="2">Depuis 2014, c'est la même personne qui répond au téléphone et qui prend le volant. Cela change la façon dont une course est préparée.</p>
+    </div>
+    <div class="commitments" data-stagger>
+      <article class="commitment">
+        <span class="commitment__n">01</span>
+        <h3>Le même chauffeur, à chaque course</h3>
+        <p>Ni centrale, ni sous-traitance. Le chauffeur connaît vos adresses, vos horaires et vos préférences : vous n'avez pas à tout réexpliquer.</p>
+      </article>
+      <article class="commitment">
+        <span class="commitment__n">02</span>
+        <h3>Une confirmation de vive voix</h3>
+        <p>Chaque demande en ligne est suivie d'un appel. Horaire, point de rendez-vous, bagages, retour : tout est vérifié avant le jour du trajet.</p>
+      </article>
+      <article class="commitment">
+        <span class="commitment__n">03</span>
+        <h3>L'heure, sans approximation</h3>
+        <p>Pour un train ou un vol, l'horaire réel est suivi et la marge prévue. Pour un rendez-vous médical, vous êtes déposé devant le bon service, pas à l'entrée la plus proche.</p>
+      </article>
+      <article class="commitment">
+        <span class="commitment__n">04</span>
+        <h3>Une conduite calme, un intérieur soigné</h3>
+        <p>Un véhicule haut de gamme, propre et entretenu, une conduite souple et une vraie discrétion. Le confort sert le trajet, il ne remplace pas le service.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--blanc" id="vehicule">
+  <div class="container">
+    <div class="split">
+      <div>
+        <span class="eyebrow" data-reveal>À bord</span>
+        <h2 class="h2" data-reveal data-d="1">Sept places, chauffeur compris.</h2>
+        <p class="lead mt-3" data-reveal data-d="2">Le véhicule est au service du trajet, pas l'inverse. Il a été choisi pour voyager seul, en famille ou en équipe, avec la place qu'il faut pour les bagages.</p>
+      </div>
+      <ul class="detail-list" data-stagger>
+        <li><strong>Jusqu'à 6 passagers</strong><span>Une famille, un groupe d'amis, une équipe : tout le monde voyage ensemble, dans un seul véhicule.</span></li>
+        <li><strong>De la place pour les bagages</strong><span>Valises, poussette, équipement de ski : indiquez le nombre de bagages en réservant.</span></li>
+        <li><strong>Un habitacle calme</strong><span>Une conduite souple, un intérieur propre et entretenu, la température réglée avant votre arrivée.</span></li>
+        <li><strong>Aide à la montée</strong><span>Fauteuil roulant pliable rangé dans le coffre, un bras pour s'installer : précisez-le en réservant.</span></li>
+      </ul>
+    </div>
+    {{VEHICLE_PHOTOS}}
+  </div>
+</section>
+
+<section class="section section--noir">
+  <div class="ambient ambient--soft" aria-hidden="true"><span class="ambient__halo ambient__halo--2"></span></div>
+  <div class="container rel">
+    <div class="section-head">
+      <span class="eyebrow" data-reveal>Réservation</span>
+      <h2 class="h2" data-reveal data-d="1">Trois temps, et une vraie personne au bout du fil.</h2>
+    </div>
+    <ol class="steps" data-stagger>
+      <li class="step">
+        <span class="step__n">1</span>
+        <h3>Vous faites la demande</h3>
+        <p><!--srv-->En ligne en deux minutes, avec ou sans compte, ou directement par téléphone.<!--/srv--><!--static-->En ligne en deux minutes, par WhatsApp, par e-mail ou directement par téléphone.<!--/static--> Rien à payer à l'avance.</p>
+      </li>
+      <li class="step">
+        <span class="step__n">2</span>
+        <h3>Le chauffeur vous rappelle</h3>
+        <p>Il valide l'horaire, le lieu de prise en charge et les détails. Le prix suit le tarif réglementé des taxis : il répond à vos questions à ce moment-là.</p>
+      </li>
+      <li class="step">
+        <span class="step__n">3</span>
+        <h3>Le jour du trajet</h3>
+        <p>Il est là à l'heure convenue. <!--srv-->Après la course, la facture arrive dans votre espace client, prête à télécharger.<!--/srv--><!--static-->Après la course, une facture vous est remise.<!--/static--></p>
+      </li>
+    </ol>
+    <div class="btn-row mt-4" data-reveal>
+      <a class="btn btn--creme" href="/reserver">Faire une demande <svg class="icon icon--move" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!--srv--><section class="section section--creme">
+  <div class="container split">
+    <div>
+      <span class="eyebrow" data-reveal>Espace client</span>
+      <h2 class="h2" data-reveal data-d="1">Votre compte garde le fil de vos trajets.</h2>
+      <p class="lead mt-3" data-reveal data-d="2">Vos adresses sont enregistrées, vos factures rangées, vos courses comptées sur la carte de fidélité. Un assistant repère vos trajets réguliers et vous propose de les réserver au bon moment.</p>
+      <ul class="list-check mt-4" data-stagger>
+        <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#home"/></svg><span>Coordonnées et adresses enregistrées : une réservation se fait en quelques secondes.</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#file"/></svg><span>Toutes vos factures, consultables et téléchargeables à tout moment.</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#card"/></svg><span>Carte de fidélité : {{LOYALTY_STEP}} courses, puis {{LOYALTY_REWARD}}.</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#repeat"/></svg><span>Un assistant qui connaît vos habitudes : destinations fréquentes, jours, horaires.</span></li>
+      </ul>
+      <div class="btn-row mt-4" data-reveal>
+        <a class="btn btn--noir" href="/compte?inscription">Créer mon compte</a>
+        <a class="btn btn--quiet" href="/reserver">Réserver sans compte <svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg></a>
+      </div>
+    </div>
+
+    <div class="account-preview on-noir" data-reveal="scale" role="group" aria-label="Aperçu de l'espace client (exemple)">
+      <div class="ambient" aria-hidden="true"><span class="ambient__halo ambient__halo--1"></span><span class="ambient__halo ambient__halo--4"></span></div>
+      <p class="caps muted">Aperçu · exemple</p>
+      <div class="loyalty-card glass glass--dark">
+        <div class="loyalty-card__top">
+          <div>
+            <p class="loyalty-card__level">Carte fidélité · Habitué</p>
+            <p class="mt-1">Claire M.</p>
+          </div>
+          <img width="120" height="105" class="loyalty-card__mono" src="/assets/img/monogramme-creme.svg" alt="">
+        </div>
+        <div class="stamps" data-n="10" aria-hidden="true">
+          <span class="stamp is-on"></span><span class="stamp is-on"></span><span class="stamp is-on"></span><span class="stamp is-on"></span><span class="stamp is-on"></span><span class="stamp is-on"></span><span class="stamp is-on"></span><span class="stamp"></span><span class="stamp"></span><span class="stamp"></span>
+        </div>
+        <div class="loyalty-card__foot"><span>7 sur 10</span><span>Encore 3 courses</span></div>
+      </div>
+      <div class="preview-row">
+        <div class="preview-card glass glass--dark">
+          <p class="caps eyebrow--sable">Assistant</p>
+          <p class="mt-1">Chaque mardi vers 8 h 15, Saint-Irénée → Centre hospitalier Lyon Sud.</p>
+          <p class="muted mt-1">Mardi prochain n'est pas encore réservé.</p>
+        </div>
+        <div class="preview-card glass glass--dark">
+          <p class="caps eyebrow--sable">Facture F2026-0142</p>
+          <p class="mt-1">Gare Part-Dieu → Lyon 5e</p>
+          <p class="muted mt-1">Disponible en PDF</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!--/srv-->
+
+<section class="section section--blanc">
+  <div class="container split split--wide-left">
+    <div>
+      <span class="eyebrow" data-reveal>Transport conventionné CPAM</span>
+      <h2 class="h2" data-reveal data-d="1">Vos rendez-vous médicaux, pris en charge selon votre prescription.</h2>
+      <p class="lead mt-3" data-reveal data-d="2">Taxi Saint-Irénée est conventionné par l'Assurance Maladie. Avec une prescription médicale de transport, votre trajet peut être remboursé et, lorsque les conditions sont réunies, vous n'avancez pas les frais.</p>
+      <p class="mt-3 muted" data-reveal data-d="3">Séances de dialyse, de chimiothérapie ou de radiothérapie : les trajets réguliers sont planifiés d'un coup, avec le même chauffeur du premier au dernier rendez-vous.</p>
+      <div class="btn-row mt-4" data-reveal data-d="4">
+        <a class="btn btn--noir" href="/conventionne">Comment ça marche</a>
+        <a class="btn btn--outline" href="/reserver?service=conventionne">Réserver un transport</a>
+      </div>
+    </div>
+    <div class="card card--creme" data-reveal="scale">
+      <p class="caps muted">À préparer avant le trajet</p>
+      <ul class="list-check mt-3">
+        <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#check"/></svg><span>La prescription médicale de transport, établie par le médecin avant le trajet</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#check"/></svg><span>Votre carte Vitale ou votre attestation de droits</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#check"/></svg><span>La convocation ou le bulletin d'hospitalisation</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#check"/></svg><span>Pour des soins en série : le calendrier des séances</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--creme">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <div>
+        <span class="eyebrow" data-reveal>Zone desservie</span>
+        <h2 class="h2" data-reveal data-d="1">Lyon, la métropole et au-delà.</h2>
+      </div>
+      <p class="lead" data-reveal data-d="2">Prise en charge partout dans Lyon et la métropole. Les trajets hors département se font sur réservation.</p>
+    </div>
+    <ul class="chips" data-stagger="fade">
+      <li class="chip">Lyon 1er à 9e</li><li class="chip">Villeurbanne</li><li class="chip">Caluire-et-Cuire</li><li class="chip">Écully</li>
+      <li class="chip">Tassin-la-Demi-Lune</li><li class="chip">Sainte-Foy-lès-Lyon</li><li class="chip">Francheville</li><li class="chip">Oullins-Pierre-Bénite</li>
+      <li class="chip">La Mulatière</li><li class="chip">Saint-Genis-Laval</li><li class="chip">Bron</li><li class="chip">Vénissieux</li>
+      <li class="chip">Saint-Priest</li><li class="chip">Vaulx-en-Velin</li><li class="chip">Décines-Charpieu</li><li class="chip">Meyzieu</li>
+      <li class="chip">Rillieux-la-Pape</li><li class="chip">Champagne-au-Mont-d'Or</li><li class="chip">Dardilly</li><li class="chip">Limonest</li>
+      <li class="chip">Craponne</li><li class="chip">Charbonnières-les-Bains</li><li class="chip">Saint-Fons</li><li class="chip">Givors</li>
+      <li class="chip">Aéroport Saint-Exupéry</li><li class="chip">Et toute la métropole</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--blanc" id="avis">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-reveal>Avis clients</span>
+      <h2 class="h2" data-reveal data-d="1">Ce qu'en disent nos clients.</h2>
+    </div>
+    {{REVIEWS}}
+  </div>
+</section>
+
+<section class="section section--creme-2">
+  <div class="container split">
+    <div>
+      <span class="eyebrow" data-reveal>Questions fréquentes</span>
+      <h2 class="h2" data-reveal data-d="1">Avant de réserver.</h2>
+      <p class="lead mt-3" data-reveal data-d="2">D'autres réponses sur la <a class="text-link" href="/contact#questions">page contact</a>, ou de vive voix au {{PHONE}}.</p>
+    </div>
+    <div class="faq" data-reveal>
+      <details>
+        <summary><!--srv-->Faut-il créer un compte pour réserver&nbsp;?<!--/srv--><!--static-->Faut-il un compte pour réserver&nbsp;?<!--/static--><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p><!--srv-->Non. Vous pouvez réserver en indiquant simplement votre nom et votre téléphone. Le compte sert à enregistrer vos adresses, retrouver vos factures et cumuler vos courses sur la carte de fidélité.<!--/srv--><!--static-->Non. Votre nom et votre téléphone suffisent : la demande part par WhatsApp ou par e-mail, et le chauffeur vous rappelle pour confirmer.<!--/static--></p></div>
+      </details>
+      <details>
+        <summary>Combien coûte une course&nbsp;?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p>Le prix d'un taxi est encadré par le tarif préfectoral et indiqué par le compteur : il dépend de la distance, de l'heure et du jour. Le site ne donne pas d'estimation automatique ; le chauffeur vous renseigne lors de son appel de confirmation.</p></div>
+      </details>
+      <details>
+        <summary>Ma réservation est-elle confirmée dès l'envoi du formulaire&nbsp;?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p>Non. Le formulaire transmet une demande. Le chauffeur vous rappelle pour confirmer sa disponibilité, l'horaire et le lieu de prise en charge. La course est confirmée à ce moment-là.</p></div>
+      </details>
+      <details>
+        <summary>Combien de passagers pouvez-vous transporter&nbsp;?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p>Le véhicule compte 7 places, chauffeur compris : jusqu'à 6 passagers. Indiquez le nombre de passagers et de bagages dans votre demande pour que la prise en charge soit adaptée.</p></div>
+      </details>
+      <details>
+        <summary>Comment se règle la course&nbsp;?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p>À bord, par carte bancaire ou en espèces. Rien n'est demandé au moment de la réservation. Une facture est établie pour chaque course.</p></div>
+      </details>
+      <details>
+        <summary>Combien de temps à l'avance faut-il réserver&nbsp;?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p>Dès que vous connaissez votre horaire. Pour un départ très matinal ou un transfert vers l'aéroport, réservez quelques jours avant. Pour une course dans l'heure, appelez directement.</p></div>
+      </details>
+      <details>
+        <summary>Puis-je réserver pour un proche&nbsp;?<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg></summary>
+        <div class="faq__body"><p>Oui. Indiquez vos coordonnées et précisez le nom du passager dans le message. C'est fréquent pour un parent âgé ou un invité qui arrive en gare.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section section--creme section--tight">
+  <div class="container">
+    <div class="cta-band" data-reveal="scale">
+      <div class="ambient" aria-hidden="true"><span class="ambient__halo ambient__halo--1"></span><span class="ambient__halo ambient__halo--4"></span></div>
+      <div>
+        <h2>Une course à prévoir&nbsp;?</h2>
+        <a class="cta-band__phone" href="tel:{{PHONE_TEL}}">{{PHONE}}</a>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--creme btn--lg" href="/reserver">Réserver en ligne</a>
+        <a class="btn btn--glass btn--lg" href="{{WHATSAPP}}" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>

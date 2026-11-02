@@ -1,0 +1,281 @@
+<section class="booking-head on-noir">
+  <div class="ambient" aria-hidden="true"><span class="ambient__halo ambient__halo--1"></span><span class="ambient__halo ambient__halo--2"></span></div>
+  <div class="container rel">
+    <span class="eyebrow">{{T:bk.kicker}}</span>
+    <h1 class="h1">{{T:bk.title}}</h1>
+    <p class="lead mt-2">{{T:bk.lead}}</p>
+  </div>
+</section>
+
+<section class="booking section--creme">
+  <div class="container booking__grid">
+    <div class="booking__main">
+      <ol class="stepper" data-stepper>
+        <li class="is-current"><span>1</span>{{T:bk.steps.trip}}</li>
+        <li><span>2</span>{{T:bk.steps.details}}</li>
+        <li><span>3</span>{{T:bk.steps.contact}}</li>
+      </ol>
+      <div class="stepper__bar" aria-hidden="true"><span data-progress></span></div>
+      <p class="sr-only" aria-live="polite" data-step-announce></p>
+
+      <form class="booking-form" data-booking-form novalidate>
+        <!-- Étape 1 : le trajet -->
+        <fieldset class="booking-step is-active" data-step="1">
+          <legend class="sr-only">{{T:bk.steps.trip}}</legend>
+
+          <div class="field">
+            <span class="field-label" id="service-label">{{T:bk.serviceLabel}}</span>
+            <div class="service-grid" role="radiogroup" aria-labelledby="service-label">
+              <label class="service-opt"><input type="radio" name="service" value="ville" checked><span><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#route"/></svg>{{T:bk.s.ville}}</span></label>
+              <label class="service-opt"><input type="radio" name="service" value="aeroport"><span><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plane"/></svg>{{T:bk.s.aeroport}}</span></label>
+              <label class="service-opt"><input type="radio" name="service" value="gare"><span><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#train"/></svg>{{T:bk.s.gare}}</span></label>
+              <label class="service-opt"><input type="radio" name="service" value="conventionne"><span><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#medical"/></svg>{{T:bk.s.conventionne}}<small>{{T:bk.s.conventionneSub}}</small></span></label>
+              <label class="service-opt"><input type="radio" name="service" value="longue"><span><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#road"/></svg>{{T:bk.s.longue}}</span></label>
+              <label class="service-opt"><input type="radio" name="service" value="dispo"><span><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#clock"/></svg>{{T:bk.s.dispo}}</span></label>
+            </div>
+            <p class="note" data-show-for="conventionne" hidden><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#info"/></svg><span>{{T:bk.medicalNote}}</span></p>
+          </div>
+
+          <div class="route-box">
+            <div class="field">
+              <label for="b-from">{{T:bk.from}}</label>
+              <div class="input-icon">
+                <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#dot"/></svg>
+                <input type="text" class="input" id="b-from" name="pickup" placeholder="{{T:bk.fromPh}}" required data-address enterkeyhint="next">
+                <button type="button" class="locate-btn" data-locate hidden aria-label="{{T:bk.locate}}"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#locate"/></svg></button>
+              </div>
+              <div class="quick-chips" data-chips="pickup"></div>
+            </div>
+            <button type="button" class="swap-btn swap-btn--inline" data-swap aria-label="{{T:bk.swap}}"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#swap"/></svg></button>
+            <div class="field">
+              <label for="b-to">{{T:bk.to}}</label>
+              <div class="input-icon">
+                <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#pin"/></svg>
+                <input type="text" class="input" id="b-to" name="dropoff" placeholder="{{T:bk.toPh}}" required data-address enterkeyhint="next">
+              </div>
+              <div class="quick-chips" data-chips="dropoff"></div>
+            </div>
+            <p class="estimate" data-estimate hidden><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#route"/></svg><strong data-estimate-value></strong><span>{{T:bk.estimateNote}}</span></p>
+          </div>
+
+          <div class="field">
+            <span class="field-label" id="when-label">{{T:bk.when}}</span>
+            <div class="segmented" role="radiogroup" aria-labelledby="when-label">
+              <label><input type="radio" name="when" value="later" checked><span>{{T:bk.later}}</span></label>
+              <label><input type="radio" name="when" value="asap"><span>{{T:bk.asap}}</span></label>
+            </div>
+          </div>
+          <div class="when-box" data-when-fields>
+            <div class="date-chips" role="group" aria-label="{{T:bk.date}}">
+              <button type="button" class="chip chip--sm" data-day="0" aria-pressed="false">{{T:bk.today}}</button>
+              <button type="button" class="chip chip--sm" data-day="1" aria-pressed="false">{{T:bk.tomorrow}}</button>
+            </div>
+            <div class="row-2">
+              <div class="field">
+                <label for="b-date">{{T:bk.date}}</label>
+                <input class="input" type="date" id="b-date" name="date" required>
+              </div>
+              <div class="field">
+                <label for="b-time" data-time-label data-label-default="{{T:bk.time}}" data-label-medical="{{T:bk.timeRdv}}">{{T:bk.time}}</label>
+                <input class="input" type="time" id="b-time" name="time" step="300" required>
+              </div>
+            </div>
+            <p class="field-hint" data-show-for="conventionne" hidden>{{T:bk.timeRdvHint}}</p>
+          </div>
+          <p class="note" data-asap-note hidden><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg><span>{{T:bk.asapNote}} <a class="text-link nowrap" href="tel:{{PHONE_TEL}}">{{PHONE}}</a></span></p>
+          <p class="note note--warn" data-soon-note hidden><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#clock"/></svg><span>{{T:bk.soonNote}} <a class="text-link nowrap" href="tel:{{PHONE_TEL}}">{{PHONE}}</a></span></p>
+
+          <label class="check"><input type="checkbox" name="roundtrip" data-roundtrip><span data-roundtrip-label data-label-default="{{T:bk.roundtrip}}" data-label-medical="{{T:bk.roundtripMedical}}">{{T:bk.roundtrip}}</span></label>
+          <div class="row-2" data-return-fields hidden>
+            <div class="field" data-return-date-field>
+              <label for="b-rdate">{{T:bk.returnDate}}</label>
+              <input class="input" type="date" id="b-rdate" name="returnDate">
+            </div>
+            <div class="field">
+              <label for="b-rtime" data-return-time-label data-label-default="{{T:bk.returnTime}}" data-label-medical="{{T:bk.returnTimeMedical}}">{{T:bk.returnTime}}</label>
+              <input class="input" type="time" id="b-rtime" name="returnTime" step="300">
+            </div>
+          </div>
+
+          <div class="booking-nav">
+            <span></span>
+            <button class="btn btn--noir" type="button" data-next>{{T:bk.continue}} <svg class="icon icon--move" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg></button>
+          </div>
+        </fieldset>
+
+        <!-- Étape 2 : les détails -->
+        <fieldset class="booking-step" data-step="2" hidden>
+          <legend class="sr-only">{{T:bk.steps.details}}</legend>
+          <div class="row-2">
+            <div class="field">
+              <span class="field-label" id="pax-label">{{T:bk.passengers}}</span>
+              <div class="counter" data-counter="passengers" data-min="1" data-max="6" role="group" aria-labelledby="pax-label">
+                <button type="button" data-dec aria-label="{{T:bk.lessPax}}">−</button>
+                <output name="passengers" aria-live="polite">1</output>
+                <button type="button" data-inc aria-label="{{T:bk.morePax}}">+</button>
+              </div>
+              <p class="field-hint" data-pax-hint data-label-default="{{T:bk.passengersHint}}" data-label-medical="{{T:bk.passengersHintMedical}}">{{T:bk.passengersHint}}</p>
+            </div>
+            <div class="field">
+              <span class="field-label" id="bag-label">{{T:bk.luggage}}</span>
+              <div class="counter" data-counter="luggage" data-min="0" data-max="8" role="group" aria-labelledby="bag-label">
+                <button type="button" data-dec aria-label="{{T:bk.lessBag}}">−</button>
+                <output name="luggage" aria-live="polite">0</output>
+                <button type="button" data-inc aria-label="{{T:bk.moreBag}}">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="field" data-show-for="aeroport gare">
+            <label for="b-travel">{{T:bk.travelRef}} <span class="muted">{{T:bk.optional}}</span></label>
+            <input type="text" class="input" id="b-travel" name="travelRef" placeholder="{{T:bk.travelRefPh}}" maxlength="24" autocapitalize="characters">
+            <p class="field-hint">{{T:bk.travelRefHint}}</p>
+          </div>
+
+          <div class="medical-box" data-show-for="conventionne" hidden>
+            <p class="field-label">{{T:bk.medicalTitle}}</p>
+            <fieldset class="radio-list field">
+              <legend class="field-label">{{T:bk.prescription}}</legend>
+              <label class="check check--radio"><input type="radio" name="prescription" value="oui"><span>{{T:bk.prescriptionYes}}</span></label>
+              <label class="check check--radio"><input type="radio" name="prescription" value="remise"><span>{{T:bk.prescriptionPending}}</span></label>
+              <label class="check check--radio"><input type="radio" name="prescription" value="non"><span>{{T:bk.prescriptionNo}}</span></label>
+            </fieldset>
+            <p class="note note--warn" data-prescription-no hidden><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#info"/></svg><span>{{T:bk.prescriptionNoNote}}</span></p>
+            <label class="check"><input type="checkbox" name="recurring"><span>{{T:bk.recurring}}<br><span class="muted">{{T:bk.recurringHint}}</span></span></label>
+          </div>
+
+          <div class="field">
+            <span class="field-label">{{T:bk.needs}}</span>
+            <div class="option-chips">
+              <label><input type="checkbox" name="options" value="fauteuil"><span>{{T:bk.o.fauteuil}}</span></label>
+              <label><input type="checkbox" name="options" value="aide"><span>{{T:bk.o.aide}}</span></label>
+              <label><input type="checkbox" name="options" value="animal"><span>{{T:bk.o.animal}}</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="b-notes">{{T:bk.notes}} <span class="muted">{{T:bk.optional}}</span></label>
+            <textarea class="textarea" id="b-notes" name="notes" maxlength="600" placeholder="{{T:bk.notesPh}}" data-label-default="{{T:bk.notesPh}}" data-label-medical="{{T:bk.notesPhMedical}}"></textarea>
+          </div>
+
+          <div class="booking-nav">
+            <button class="btn btn--quiet" type="button" data-prev><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-left"/></svg>{{T:bk.back}}</button>
+            <button class="btn btn--noir" type="button" data-next>{{T:bk.continue}} <svg class="icon icon--move" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg></button>
+          </div>
+        </fieldset>
+
+        <!-- Étape 3 : les coordonnées -->
+        <fieldset class="booking-step" data-step="3" hidden>
+          <legend class="sr-only">{{T:bk.steps.contact}}</legend>
+
+          <div class="signed-in" data-signed-in hidden>
+            <img src="/assets/img/monogramme-noir.svg" alt="" width="40" height="35" loading="lazy">
+            <div>
+              <p class="caps muted">{{T:bk.signedIn}}</p>
+              <p data-signed-name></p>
+            </div>
+          </div>
+          <p class="note" data-guest-note><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#user"/></svg><span><!--srv-->{{T:bk.guestNote}}<!--/srv--><!--static-->{{T:bk.guestNoteStatic}}<!--/static--></span></p>
+
+          <div class="form-grid">
+            <div class="field span-2">
+              <label for="b-name">{{T:bk.name}}</label>
+              <input type="text" class="input" id="b-name" name="name" autocomplete="name" required enterkeyhint="next">
+            </div>
+            <div class="field">
+              <label for="b-phone">{{T:bk.phone}}</label>
+              <input class="input" id="b-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required enterkeyhint="next">
+              <p class="field-hint">{{T:bk.phoneHint}}</p>
+            </div>
+            <div class="field">
+              <label for="b-email">{{T:bk.email}} <span class="muted" data-email-optional>{{T:bk.optional}}</span></label>
+              <input class="input" id="b-email" name="email" type="email" autocomplete="email" enterkeyhint="done">
+              <p class="field-hint">{{T:bk.emailHint}}</p>
+            </div>
+          </div>
+
+          <label class="check" data-remember-box><input type="checkbox" name="remember"><span>{{T:bk.remember}}<br><span class="muted">{{T:bk.rememberHint}}</span></span></label>
+
+          <!--srv-->
+          <div class="account-offer" data-account-offer>
+            <label class="check"><input type="checkbox" name="createAccount" data-create-account><span><strong>{{T:bk.createAccount}}</strong><br><span class="muted">{{T:bk.createAccountHint}}</span></span></label>
+            <div class="field" data-password-field hidden>
+              <label for="b-password">{{T:bk.password}}</label>
+              <input class="input" id="b-password" name="password" type="password" autocomplete="new-password" minlength="8">
+              <p class="field-hint">{{T:bk.passwordHint}}</p>
+            </div>
+          </div>
+          <!--/srv-->
+
+          <input type="text" class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label class="check"><input type="checkbox" name="consent" required><span><span data-consent-text data-label-default="{{T:bk.consent}}" data-label-medical="{{T:bk.consentMedical}}">{{T:bk.consent}}</span> <a class="text-link" href="{{T:privacy.url}}" target="_blank">{{T:bk.privacy}}</a></span></label>
+          <p class="muted small">{{T:bk.requestNote}}</p>
+
+          <div class="alert" data-form-alert hidden></div>
+          <div class="fallback" data-fallback hidden>
+            <p>{{T:bk.fallback}}</p>
+            <div class="btn-row mt-2">
+              <a class="btn btn--noir btn--sm" href="tel:{{PHONE_TEL}}"><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg>{{T:bk.fallbackCall}}</a>
+              <a class="btn btn--outline btn--sm" href="mailto:{{EMAIL}}" data-fallback-mail>{{T:bk.fallbackMail}}</a>
+            </div>
+          </div>
+          <div class="booking-nav">
+            <button class="btn btn--quiet" type="button" data-prev><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-left"/></svg>{{T:bk.back}}</button>
+            <button class="btn btn--noir btn--lg" type="submit">{{T:bk.submit}}</button>
+          </div>
+        </fieldset>
+      </form>
+
+      <!-- Confirmation -->
+      <div class="booking-done" data-done hidden tabindex="-1">
+        <div class="done-mark" aria-hidden="true"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="m15 27 7.5 7.5L38 19"/></svg></div>
+        <span class="eyebrow"><!--srv-->{{T:bk.done.kicker}}<!--/srv--><!--static-->{{T:bk.st.kicker}}<!--/static--></span>
+        <h2 class="h2"><!--srv-->{{T:bk.done.title}}<!--/srv--><!--static-->{{T:bk.st.title}}<!--/static--></h2>
+        <p class="lead mt-2" data-done-text></p>
+        <p class="note mt-2" data-done-medical hidden><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#file"/></svg><span>{{T:bk.done.medicalReminder}}</span></p>
+        <div class="done-ref"><span class="caps muted">{{T:bk.done.ref}}</span><strong data-done-ref></strong><span class="badge badge--pending"><!--srv-->{{T:bk.done.status}}<!--/srv--><!--static-->{{T:bk.st.status}}<!--/static--></span></div>
+        <!--static--><div class="static-send mt-3" data-static-send>
+          <a class="btn btn--noir btn--lg" href="{{WHATSAPP}}" data-send-wa rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>{{T:bk.st.whatsapp}}</a>
+          <a class="btn btn--outline btn--lg" href="mailto:{{EMAIL}}" data-send-mail><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#mail"/></svg>{{T:bk.st.mail}}</a>
+          <a class="btn btn--quiet" href="tel:{{PHONE_TEL}}"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg>{{T:bk.st.call}}</a>
+        </div><!--/static-->
+        <div class="btn-row mt-4">
+          <!--srv--><a class="btn btn--noir" href="/compte#trajets" data-done-account hidden>{{T:bk.done.account}}</a><!--/srv-->
+          <button class="btn btn--outline" type="button" data-ics><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#calendar"/></svg>{{T:bk.done.calendar}}</button>
+          <button class="btn btn--outline" type="button" data-share><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#send"/></svg>{{T:bk.done.share}}</button>
+          <a class="btn btn--quiet" href="{{T:book.url}}">{{T:bk.done.new}}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking__aside">
+      <div class="summary glass glass--light" data-summary>
+        <p class="caps muted">{{T:bk.sum.title}}</p>
+        <div class="summary__route">
+          <div><span class="summary__dot"></span><p data-sum="pickup" class="summary__empty">{{T:bk.sum.from}}</p></div>
+          <div><span class="summary__dot summary__dot--end"></span><p data-sum="dropoff" class="summary__empty">{{T:bk.sum.to}}</p></div>
+        </div>
+        <dl class="summary__list">
+          <div data-sum-row="estimate" hidden><dt>{{T:bk.sum.estimate}}</dt><dd data-sum="estimate"></dd></div>
+          <div><dt>{{T:bk.sum.service}}</dt><dd data-sum="service"></dd></div>
+          <div><dt>{{T:bk.sum.when}}</dt><dd data-sum="when"></dd></div>
+          <div data-sum-row="return" hidden><dt>{{T:bk.sum.return}}</dt><dd data-sum="return"></dd></div>
+          <div><dt>{{T:bk.sum.pax}}</dt><dd data-sum="pax"></dd></div>
+          <div data-sum-row="medical" hidden><dt>{{T:bk.prescription}}</dt><dd data-sum="medical"></dd></div>
+          <div data-sum-row="options" hidden><dt>{{T:bk.sum.options}}</dt><dd data-sum="options"></dd></div>
+        </dl>
+        <div class="summary__edit">
+          <button type="button" class="btn btn--quiet btn--xs" data-goto="1">{{T:bk.sum.edit}} : {{T:bk.steps.trip}}</button>
+          <button type="button" class="btn btn--quiet btn--xs" data-goto="2">{{T:bk.sum.edit}} : {{T:bk.steps.details}}</button>
+        </div>
+        <hr class="rule">
+        <ul class="summary__next">
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg>{{T:bk.next.call}}</li>
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#card"/></svg>{{T:bk.next.pay}}</li>
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#file"/></svg>{{T:bk.next.invoice}}</li>
+        </ul>
+      </div>
+      <a class="aside-call" href="tel:{{PHONE_TEL}}"><span class="caps muted">{{T:bk.asideCall}}</span><strong>{{PHONE}}</strong></a>
+    </div>
+  </div>
+</section>
